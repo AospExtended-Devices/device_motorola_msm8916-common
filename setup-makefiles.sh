@@ -21,9 +21,9 @@ set -e
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-TESLA_ROOT="$MY_DIR"/../../..
+AOSIP_ROOT="$MY_DIR"/../../..
 
-HELPER="$TESLA_ROOT"/vendor/tesla/build/tools/extract_utils.sh
+HELPER="$TESLA_ROOT"/vendor/aosip/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -31,7 +31,8 @@ fi
 . "$HELPER"
 
 # Initialize the helper for common
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$TESLA_ROOT" "true"
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$AOSIP_ROOT"
+ "true"
 
 # Copyright headers and guards
 write_headers "harpia lux merlin osprey surnia"
@@ -44,7 +45,7 @@ write_footers
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$TESLA_ROOT"
+    setup_vendor "$DEVICE" "$VENDOR" "$AOSIP_ROOT"
 
     # Copyright headers and guards
     write_headers

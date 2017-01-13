@@ -21,9 +21,9 @@ set -e
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
-TESLA_ROOT="$MY_DIR"/../../..
+AOSIP_ROOT="$MY_DIR"/../../..
 
-HELPER="$TESLA_ROOT"/vendor/tesla/build/tools/extract_utils.sh
+HELPER="$AOSIP_ROOT"/vendor/aosip/build/tools/extract_utils.sh
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
@@ -47,12 +47,12 @@ else
 fi
 
 # Initialize the helper
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$TESLA_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$AOSIP_ROOT" true
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     # Reinitialize the helper for device
-    setup_vendor "$DEVICE" "$VENDOR" "$TESLA_ROOT"
+    setup_vendor "$DEVICE" "$VENDOR" "$AOSIP_ROOT"
     extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 fi
 
