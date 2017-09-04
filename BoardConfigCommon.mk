@@ -20,9 +20,7 @@ VENDOR_PATH := device/motorola/msm8916-common
 
 BOARD_VENDOR := motorola-qcom
 
-TARGET_FS_CONFIG_GEN += \
-    $(VENDOR_PATH)/fs_config/file_caps.fs \
-    $(VENDOR_PATH)/fs_config/mot_aids.fs
+TARGET_SPECIFIC_HEADER_PATH := $(VENDOR_PATH)/include
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
@@ -85,6 +83,9 @@ USE_OPENGL_RENDERER := true
 # FM
 BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
+
+# Filesystem
+TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(VENDOR_PATH)/android_filesystem_config.h
 
 # Keymaster
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
