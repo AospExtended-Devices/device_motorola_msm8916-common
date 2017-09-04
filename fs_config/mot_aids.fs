@@ -61,6 +61,12 @@ value: 5015
 [AID_MOT_ESDFS]
 value: 5016
 
+[AID_MOT_ESDFS]
+value: 5016
+
+[AID_MOT_ESDFS]
+value: 5016
+
 [AID_POWER]
 value: 5017
 
