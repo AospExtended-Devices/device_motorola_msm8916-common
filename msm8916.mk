@@ -210,6 +210,14 @@ PRODUCT_PACKAGES += \
     libshim_ril \
     libxml2
 
+# Fake QTI jar
+PRODUCT_PACKAGES += \
+    qti-telephony-common \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
