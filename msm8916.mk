@@ -196,6 +196,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageActions
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-legacymm \
+    vendor.lineage.livedisplay@2.0-service-sysfs
+
 # Vendor security patch level
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    ro.lineage.build.vendor_security_patch=2018-04-01
